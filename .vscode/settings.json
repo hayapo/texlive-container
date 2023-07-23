@@ -1,0 +1,81 @@
+{
+  "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
+  "latex-workshop.latex.autoBuild.run": "onSave",
+  "latex-workshop.latex.autoClean.run": "onFailed",
+  "editor.formatOnSave": true,
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "latexmk",
+      "tools": [
+        "latexmk"
+      ]
+    },
+  ],
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk",
+      "command": "latexmk",
+      "args": [
+        // copied from `.latexmkrc`.
+        "-e",
+        "$latex = 'lualatex %O -synctex=1 -interaction=nonstopmode %S'",
+        "-e",
+        "$biber = 'biber %O --bblencoding=utf8 -u -U --output_safechars %B'",
+        "-e",
+        "$bibtex = 'pbibtex %O %B'",
+        "-e",
+        "$makeindex = 'mendex %O -o %D %S'",
+        //
+        "-e",
+        "$max_repeat = 5",
+        "-e",
+        "$pdf_mode = 4",
+        //
+        "-e",
+        "$aux_dir = 'build/'",
+        "-e",
+        "$out_dir = 'build/'",
+        //
+        "-file-line-error",
+        "-cd",
+        "%DOC%"
+      ]
+    }
+  ],
+  "latex-workshop.latexindent.args": [
+    "-c",
+    "%DIR%/",
+    "%TMPFILE%",
+    "-y=defaultIndent: '%INDENT%'"
+  ],
+  "latex-workshop.latex.recipe.default": "first",
+  "latex-workshop.latex.outDir": "%DIR%/build",
+  "latex-workshop.view.pdf.viewer": "tab",
+  "latex-workshop.view.pdf.zoom": "page-width",
+  "latex-workshop.intellisense.package.enabled": true,
+  "latex-workshop.latex.clean.fileTypes": [
+    "*.aux",
+    "*.bbl",
+    "*.blg",
+    "*.idx",
+    "*.ind",
+    "*.lof",
+    "*.lot",
+    "*.out",
+    "*.toc",
+    "*.acn",
+    "*.acr",
+    "*.alg",
+    "*.glg",
+    "*.glo",
+    "*.gls",
+    "*.ist",
+    "*.fls",
+    "*.log",
+    "*.fdb_latexmk",
+    "*.snm",
+    "*.nav",
+    "*.dvi",
+    "*.synctex.gz"
+  ],
+}
